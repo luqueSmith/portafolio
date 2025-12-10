@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio - Raul Smith Luque Chumpitaz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<!-- Modal galería redes -->
+<div class="modal-gallery" id="redesModal">
+  <div class="modal-overlay" id="redesOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="redesClose" aria-label="Cerrar galería">✕</button>
+
+    <div class="modal-image-wrapper">
+      <button class="modal-nav modal-prev" id="redesPrev" aria-label="Anterior">‹</button>
+      <img id="redesImg" src="" alt="Evidencia de redes">
+      <button class="modal-nav modal-next" id="redesNext" aria-label="Siguiente">›</button>
+    </div>
+
+    <p class="modal-caption" id="redesCaption">
+      Evidencia de trabajos de redes (1 / 13)
+    </p>
+  </div>
+</div>
+<!-- Modal galería soporte -->
+<div class="modal-gallery" id="soporteModal">
+  <div class="modal-overlay" id="soporteOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="soporteClose" aria-label="Cerrar galería">✕</button>
+
+    <div class="modal-image-wrapper">
+      <button class="modal-nav modal-prev" id="soportePrev" aria-label="Anterior">‹</button>
+      <img id="soporteImg" src="" alt="Evidencia de soporte">
+      <button class="modal-nav modal-next" id="soporteNext" aria-label="Siguiente">›</button>
+    </div>
+
+    <p class="modal-caption" id="soporteCaption">
+      Evidencia de trabajos de soporte (1 / N)
+    </p>
+  </div>
+</div>
+
+<!-- Modal galería ciberseguridad -->
+<div class="modal-gallery" id="ciberModal">
+  <div class="modal-overlay" id="ciberOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="ciberClose" aria-label="Cerrar galería">✕</button>
+
+    <div class="modal-image-wrapper">
+      <button class="modal-nav modal-prev" id="ciberPrev" aria-label="Anterior">‹</button>
+      <img id="ciberImg" src="" alt="Evidencia de ciberseguridad">
+      <button class="modal-nav modal-next" id="ciberNext" aria-label="Siguiente">›</button>
+    </div>
+
+    <p class="modal-caption" id="ciberCaption">
+      Evidencia de prácticas de ciberseguridad (1 / N)
+    </p>
+  </div>
+</div>
+
+<!-- Modal galería desarrollo web -->
+<div class="modal-gallery" id="webModal">
+  <div class="modal-overlay" id="webOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="webClose" aria-label="Cerrar galería">✕</button>
+
+    <div class="modal-image-wrapper">
+      <button class="modal-nav modal-prev" id="webPrev" aria-label="Anterior">‹</button>
+      <img id="webImg" src="" alt="Proyecto web">
+      <button class="modal-nav modal-next" id="webNext" aria-label="Siguiente">›</button>
+    </div>
+
+    <p class="modal-caption" id="webCaption">
+      Proyectos de desarrollo web (1 / N)
+    </p>
+  </div>
+</div>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-mark">RS</span>
+        <div class="logo-text">
+          <span class="logo-name">Raul Smith</span>
+          <span class="logo-role">Técnico en Soporte & Redes</span>
+        </div>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / INICIO -->
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-text">
+        <p class="hero-tag">Disponible para trabajar remoto y presencial</p>
+        <h1>Raul Smith Luque Chumpitaz</h1>
+        <h2>Aspirante a Técnico en Soporte Informático, Redes y Ciberseguridad</h2>
+
+        <p class="hero-description">
+          Soy aspirante para técnico en informática con experiencia en soporte técnico, redes, ciberseguridad básica y
+          desarrollo web.
+          Estudio <strong>Ciberseguridad en SENATI</strong> y estoy por el <strong>6.º semestre</strong>.
+          <strong>Actualmente no cuento con el título por temas económicos</strong>,
+          no por falta de esfuerzo o interés. Sigo formándome de manera autodidacta y
+          aplicando mis conocimientos en proyectos reales donde me encontraba haciendo mis practicas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#servicios" class="btn primary-btn">Ver servicios</a>
+          <a href="#contacto" class="btn secondary-btn">Contáctame</a>
+          <!-- Puedes cambiar este link por tu CV en PDF -->
+          <a href="#" class="btn ghost-btn" target="_blank">Descargar CV (PDF)</a>
+        </div>
+
+        <div class="hero-highlight">
+          <span>💻 Soporte Técnico</span>
+          <span>🌐 Redes & Mikrotik</span>
+          <span>🔐 Ciberseguridad básica</span>
+          <span>🌍 Desarrollo Web</span>
+        </div>
+      </section>
+
+      <aside class="hero-photo reveal">
+        <!-- REEMPLAZA src POR TU FOTO -->
+        <div class="photo-wrapper">
+          <img src="img/foto.png" alt="Foto de Raul Smith" />
+        </div>
+        <p class="photo-caption">
+          Hola, Mi nombre es Raul Smith Luque Chumpitaz. <br>
+          Y este es mi portafolio.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy un pre profesional orientado a la solución de problemas, con experiencia en soporte técnico,
+          mantenimiento de equipos, redes y servicios de TI para usuarios y pequeños negocios.
+          Me adapto rápido a nuevas tecnologías y disfruto documentar, ordenar y dejar
+          todo funcionando de forma clara para el cliente.
+        </p>
+        <p>
+          Me interesa crecer en áreas de infraestructura, redes, ciberseguridad y automatización,
+          ofreciendo un servicio responsable, honesto y transparente, Me gusta aprender cosas nuevas y
+          desarrollarme con nuevas tecnologíaso o nuevas formas de aumentar mi experiencia y aprendizaje continuo.
+        </p>
+
+        <div class="about-list">
+          <div>
+            <h3>Lo que sé hacer</h3>
+            <ul>
+              <li>Soporte técnico presencial y remoto</li>
+              <li>Mantenimiento y reparación de PCs y laptops</li>
+              <li>Redes: routers, switches, access points, Mikrotik</li>
+              <li>Servidores básicos y servicios en red</li>
+              <li>Desarrollo web básico (HTML, CSS, JS)</li>
+              <li>Microsoft Excel, Word y PowerPoint</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Datos rápidos</h3>
+            <ul>
+              <li>Ubicación: Perú</li>
+              <li>Modalidad: Remoto / Presencial</li>
+              <li>Disponibilidad: Inmediata</li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div class="mini-card reveal">
+          <h4>3 años</h4>
+          <p>Estudiando en soporte y redes.</p>
+        </div>
+        <div class="mini-card reveal">
+          <h4>Clientes satisfechos</h4>
+          <p>Trabajo orientando y dando soporte donde hacia mis practicas.</p>
+        </div>
+        <div class="mini-card reveal">
+          <h4>Aprendizaje continuo</h4>
+          <p>Cursos, laboratorios y proyectos personales constantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS PRINCIPALES -->
+  <section id="servicios" class="section bg-alt">
+    <div class="container">
+      <h2 class="section-title">Áreas principales de trabajo</h2>
+      <p class="section-subtitle">
+        Cada área tiene su propia página interna con más detalle y espacio para fotos de proyectos.
+      </p>
+
+      <div class="services-grid">
+        <!-- REDES -->
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <img src="img/icon/redes.png" alt="Icono redes" width="90%">
+          </div>
+          <h3>Redes & Mikrotik</h3>
+          <p>
+            Diseño, instalación y configuración de redes para hogares y pequeños negocios:
+            routers, switches, puntos de acceso y Mikrotik.
+          </p>
+          <button class="btn small-btn go-section" data-target="#detalle-redes">
+            Ver más detalles
+          </button>
+        </article>
+
+        <!-- SOPORTE -->
+        <article class="service-card reveal">
+          <div class="service-icon">💻</div>
+          <h3>Soporte Técnico & Reparación</h3>
+          <p>
+            Mantenimiento preventivo y correctivo, formateo, instalación de software y solución de problemas.
+          </p>
+          <button class="btn small-btn go-section" data-target="#detalle-soporte">
+            Ver más detalles
+          </button>
+        </article>
+
+        <!-- CIBERSEGURIDAD -->
+        <article class="service-card reveal">
+          <div class="service-icon">🔐</div>
+          <h3>Ciberseguridad & Servidores</h3>
+          <p>
+            Buenas prácticas de seguridad, respaldos, segmentación básica de red y configuración de servicios.
+          </p>
+          <button class="btn small-btn go-section" data-target="#detalle-ciberseguridad">
+            Ver más detalles
+          </button>
+        </article>
+
+        <!-- WEB -->
+        <article class="service-card reveal">
+          <div class="service-icon">🌍</div>
+          <h3>Desarrollo Web</h3>
+          <p>
+            Creación de sitios web básicos para portafolios, negocios y páginas informativas.
+          </p>
+          <button class="btn small-btn go-section" data-target="#detalle-web">
+            Ver más detalles
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALLE REDES -->
+  <section id="detalle-redes" class="section detail-section">
+    <div class="container detail-grid">
+      <div class="detail-text reveal">
+        <h2>Redes & Mikrotik</h2>
+        <p>
+          Experiencia en instalación y configuración de redes cableadas e inalámbricas para hogares y pequeños negocios.
+          Configuración de routers, switches, puntos de acceso, redes invitadas, control de ancho de banda y seguridad
+          básica.
+        </p>
+        <ul class="detail-list">
+          <li>Instalación de routers, switches y access points.</li>
+          <li>Configuración de Mikrotik: Hotspot, colas simples, firewall básico.</li>
+          <li>Diagnóstico y solución de problemas de conectividad.</li>
+          <li>Optimización de señal WiFi y cobertura.</li>
+          <li>Segmentación simple de red (por áreas o dispositivos).</li>
+        </ul>
+      </div>
+      <div class="detail-gallery reveal">
+        <h3>Galería de trabajos en redes</h3>
+        <p>
+          Haz clic en el siguiente botón para ver fotos reales de instalaciones y configuraciones
+          de redes que he realizado.
+        </p>
+        <button class="btn small-btn" id="openRedesGallery">
+          Ver galería de redes
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DETALLE SOPORTE -->
+  <section id="detalle-soporte" class="section detail-section bg-alt">
+    <div class="container detail-grid">
+      <div class="detail-text reveal">
+        <h2>Soporte Técnico & Reparación</h2>
+        <p>
+          Soporte técnico completo para usuarios: diagnóstico de problemas, mantenimiento, formateos, instalación de
+          sistemas
+          operativos y aplicaciones, además de soporte remoto.
+        </p>
+        <ul class="detail-list">
+          <li>Mantenimiento preventivo y correctivo de PCs y laptops.</li>
+          <li>Instalación y configuración de Windows y drivers.</li>
+          <li>Limpieza interna, cambio de discos, SSD, memorias, etc.</li>
+          <li>Respaldo y recuperación básica de información.</li>
+          <li>Soporte remoto (AnyDesk, TeamViewer) y asesoría al usuario.</li>
+        </ul>
+      </div>
+      <div class="detail-gallery reveal">
+        <h3>Galería de soporte y reparación</h3>
+        <p>
+          Haz clic en el siguiente botón para ver fotos de equipos, mantenimientos,
+          formateos y reparaciones que he realizado.
+        </p>
+        <button class="btn small-btn" id="openSoporteGallery">
+          Ver galería de soporte
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALLE CIBERSEGURIDAD -->
+  <section id="detalle-ciberseguridad" class="section detail-section">
+    <div class="container detail-grid">
+      <div class="detail-text reveal">
+        <h2>Ciberseguridad & Servidores</h2>
+        <p>
+          Formación en ciberseguridad y experiencias prácticas en protección básica de redes y equipos.
+          Implementación de buenas prácticas, respaldos y controles de acceso.
+        </p>
+        <ul class="detail-list">
+          <li>Aplicación de políticas de contraseñas y usuarios.</li>
+          <li>Configuración básica de firewall en routers y Mikrotik.</li>
+          <li>Respaldo y restauración de configuraciones y datos.</li>
+          <li>Actualización y endurecimiento básico de sistemas.</li>
+          <li>Monitoreo básico de servicios y recursos.</li>
+        </ul>
+      </div>
+      <div class="detail-gallery reveal">
+        <h3>Laboratorios y prácticas de ciberseguridad</h3>
+        <p>
+          Haz clic en el botón para ver capturas de laboratorios, configuraciones,
+          diagramas de red y prácticas relacionadas con ciberseguridad.
+        </p>
+        <button class="btn small-btn" id="openCiberGallery">
+          Ver galería de ciberseguridad
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DETALLE WEB -->
+  <section id="detalle-web" class="section detail-section bg-alt">
+    <div class="container detail-grid">
+      <div class="detail-text reveal">
+        <h2>Desarrollo Web</h2>
+        <p>
+          Desarrollo de páginas web básicas para negocios, portafolios personales, páginas informativas y landing pages
+          simples.
+        </p>
+        <ul class="detail-list">
+          <li>Maquetación con HTML5 y CSS3.</li>
+          <li>Uso de JavaScript para interactividad básica.</li>
+          <li>Diseños adaptados a móvil y escritorio.</li>
+          <li>Integración de formularios de contacto.</li>
+          <li>Subida del sitio a hosting y configuración básica de dominio.</li>
+        </ul>
+      </div>
+      <div class="detail-gallery reveal">
+        <h3>Proyectos de desarrollo web</h3>
+        <p>
+          Aquí puedes ver algunos de mis proyectos web. Cada botón te llevará a una página
+          o demo real creada por mí.
+        </p>
+
+        <div class="web-projects-grid">
+          <a href="https://luquesmith.github.io/Intranet/" target="_blank" class="web-project-card">
+            <h4>Diseño Web 1</h4>
+            <p>Landing page moderna</p>
+          </a>
+
+          <a href="https://luquesmith.github.io/VideoJuego/" target="_blank" class="web-project-card">
+            <h4>Diseño Web 2</h4>
+            <p>Portafolio personal</p>
+          </a>
+
+          <a href="https://luquesmith.github.io/Tienda/" target="_blank" class="web-project-card">
+            <h4>Diseño Web 3</h4>
+            <p>Tienda en línea básica</p>
+          </a>
+
+          <a href="https://luquesmith.github.io/NEXUS/" target="_blank" class="web-project-card">
+            <h4>Diseño Web 4</h4>
+            <p>Blog informativo</p>
+          </a>
+        </div>
+
+        <p style="margin-top:1rem; font-size:0.85rem; color:#9ca3af;">
+          *Estos son proyectos que hice para demostrar mi utilidad dependiendo del ambito.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO GENERAL -->
+  <section id="portafolio" class="section">
+    <div class="container">
+      <h2 class="section-title">Portafolio de trabajos</h2>
+      <p class="section-subtitle">
+        Algunos de estos ejemplos son trabajos que puedo aplicar, Puedo cumplir en estos apectos y ser de ayuda para ustedes.
+      </p>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card reveal">
+          <h3>Instalación de red para negocio local</h3>
+          <p>Diseño y configuración de red WiFi y cableada para un pequeño negocio, ampliando cobertura y estabilidad.
+          </p>
+          <span class="tag">Redes</span>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <h3>Mantenimiento completo a 10 equipos</h3>
+          <p>Formateo, instalación de sistemas operativos, programas básicos y limpieza física.</p>
+          <span class="tag">Soporte Técnico</span>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <h3>Sitio web informativo</h3>
+          <p>Desarrollo de página web simple para un emprendimiento, con información de servicios y formulario de
+            contacto.</p>
+          <span class="tag">Web</span>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <h3>Refuerzo de seguridad en pequeña red</h3>
+          <p>Segmentación básica, configuración de firewall y actualización de equipos.</p>
+          <span class="tag">Ciberseguridad</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section bg-alt">
+    <div class="container contact-grid">
+      <div class="contact-text reveal">
+        <h2>Contacto</h2>
+        <p>
+          Si quieres trabajar conmigo, tienes un proyecto en mente o necesitas soporte para tus equipos o red,
+          puedes escribirme directamente por WhatsApp o correo.
+        </p>
+        <ul class="contact-list">
+          <li><strong>Correo:</strong> <a href="mailto:luquesmith537@gmail.com">luquesmith537@gmail.com</a></li>
+          <li><strong>Teléfono / WhatsApp:</strong> <a href="https://wa.me/51906328464" target="_blank">+51
+              906 328 464</a></li>
+          <li><strong>Ubicación:</strong> Perú (disponible remoto y presencial)</li>
+        </ul>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <h3>Envíame un mensaje</h3>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="from_name" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="reply_to" placeholder="tunombre@correo.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="message" rows="4" placeholder="Cuéntame brevemente qué necesitas"
+            required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary-btn">
+          Enviar mensaje
+        </button>
+
+        <p class="form-note" id="formStatus">
+          *Tu mensaje será enviado directamente a mi correo.
+        </p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Raul Smith Luque Chumpitaz. Todos los derechos reservados.</p>
+      <p class="footer-small">
+        Sitio web desarrollado a mano con HTML, CSS y JavaScript.
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("xISsVPwNz5VYTUzdI");
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
