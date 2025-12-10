@@ -282,3 +282,90 @@ if (webClose) webClose.addEventListener("click", closeWebModal);
 if (webOverlay) webOverlay.addEventListener("click", closeWebModal);
 if (webPrev) webPrev.addEventListener("click", prevWeb);
 if (webNext) webNext.addEventListener("click", nextWeb);
+// ===== FORMULARIO DE CONTACTO (EMAILJS + límite de 3 envíos por correo) =====
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+// Manejo de conteo de envíos por correo con localStorage
+function getEmailCount(email) {
+  try {
+    const raw = localStorage.getItem("contactFormCounts");
+    const counts = raw ? JSON.parse(raw) : {};
+    return counts[email] || 0;
+  } catch (e) {
+    return 0;
+  }
+}
+
+function setEmailCount(email, count) {
+  try {
+    const raw = localStorage.getItem("contactFormCounts");
+    const counts = raw ? JSON.parse(raw) : {};
+    counts[email] = count;
+    localStorage.setItem("contactFormCounts", JSON.stringify(counts));
+  } catch (e) {
+    // si falla localStorage, no pasa nada grave
+  }
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita recargar la página
+
+    const emailInput = document.getElementById("email");
+    const emailValue = emailInput ? emailInput.value.trim().toLowerCase() : "";
+
+    // Validar correo
+    if (!emailValue) {
+      if (formStatus) {
+        formStatus.textContent = "Por favor, escribe un correo válido.";
+        formStatus.style.color = "#f97373"; // rojo suave
+      }
+      return;
+    }
+
+    // Limitar a 3 envíos por correo (por navegador)
+    const currentCount = getEmailCount(emailValue);
+    if (currentCount >= 3) {
+      if (formStatus) {
+        formStatus.textContent =
+          "Este correo ya ha enviado el formulario 3 veces. " +
+          "Si necesitas más ayuda, escríbeme directamente a luquesmith537@gmail.com.";
+        formStatus.style.color = "#f97373";
+      }
+      return;
+    }
+
+    // Mensaje de cargando
+    if (formStatus) {
+      formStatus.textContent = "Enviando mensaje...";
+      formStatus.style.color = "#e5e7eb"; // gris claro
+    }
+
+    // === TUS IDS REALES DE EMAILJS ===
+    const SERVICE_ID = "service_ci0mv8n";
+    const TEMPLATE_ID = "template_wvhgd9y";
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, "#contactForm")
+      .then(() => {
+        // sumar 1 al contador de este correo
+        setEmailCount(emailValue, currentCount + 1);
+
+        if (formStatus) {
+          formStatus.textContent =
+            "¡Mensaje enviado correctamente! Te responderé lo antes posible.";
+          formStatus.style.color = "#22c55e"; // verde
+        }
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("EMAILJS ERROR:", error);
+        if (formStatus) {
+          formStatus.textContent =
+            "Hubo un error al enviar el mensaje. También puedes escribirme a luquesmith537@gmail.com.";
+          formStatus.style.color = "#f97373"; // rojo
+        }
+      });
+  });
+}
